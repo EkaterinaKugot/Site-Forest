@@ -1,0 +1,1264 @@
+@charset "UTF-8";
+.docSlider-pager{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.docSlider-button{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  margin: 5px 0;
+  background-color: #333;
+  opacity: .25;
+  appearance: none;
+  border: none;
+  box-sizing: border-box;
+
+  &.selected{
+    opacity: 1;
+  }
+
+  &:active{
+    outline: none;
+  }
+}
+html,body{
+  overflow: hidden;
+  touch-action: none;
+  height: 100%;
+}
+
+html,body,
+.docSlider,
+.docSlider-inner,
+.docSlider-page{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: none;
+  outline: none;
+
+  &:active{
+    outline: none;
+  }
+}
+
+.docSlider{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.docSlider-inner{
+  width: inherit;
+  height: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.docSlider-page{
+  height: inherit;
+  width: inherit;
+  overflow: auto;
+  position: absolute;
+  overflow-scrolling: touch;
+}
+
+$yellow: #f5de0d;
+$yellow_activ: yellow;
+$gray: #ebeeea;
+$green:#759654;
+$zoloto: #bda987;
+
+$fontMR: Montserrat-Regular;
+$fontMM: Montserrat-Medium;
+$fontBB: BebasNeue-Book;
+
+@mixin BlockNazvania($m-top, $m-bot){
+  grid-column: 1/13;
+  text-align: center;
+  margin-top: $m-top;
+  margin-bottom: $m-bot;
+}
+@mixin Nazvania(){
+  margin-bottom: 4px;
+  font-family: $fontBB;
+  font-weight: 1000;
+  font-size: 28px;
+}
+@mixin Pattern(){
+  width: 175px;
+  height: 25px;
+  margin: auto;
+  background: url("../Img/pattern5.png") no-repeat;
+  background-size: 175px auto;
+}
+
+@font-face{
+  font-family: Montserrat-Regular;
+  src: url("../Fonts/Montserrat-Regular.ttf");
+}
+@font-face{
+  font-family: Montserrat-Medium;
+  src: url("../Fonts/Montserrat-Medium.ttf");
+}
+@font-face{
+  font-family: BebasNeue-Book;
+  src: url("../Fonts/BebasNeue-Book.ttf");
+}
+
+@keyframes vis{
+  0%{opacity: 0}
+  50%{opacity: 0}
+  100%{opacity: 100%}
+}
+@keyframes hid{
+  0%{opacity: 100%}
+  100%{opacity: 0}
+}
+@keyframes i_hid{
+  0%{opacity: 0}
+  99%{opacity: 0}
+  100%{opacity: 1%}
+}
+@keyframes vis_t{
+  0%{opacity: 0}
+  50%{opacity: 0}
+  60%{opacity: 100%}
+}
+
+@media (max-width: 1470px){#informasia_ob_otele{.olenenok{left: 63%} div:nth-of-type(2){width: 30%; margin-left: 35%}}}
+@media (max-width: 1435px){#karuselkaid{.right_ramka{div:first-of-type{a:nth-of-type(2){padding-left: 5%;}}}}}
+@media (max-width: 1362px){#numbers{.block_in_spisok_3{div:nth-of-type(1){top:46%}}}}
+@media (max-width: 1270px){#karuselkaid{.bolshaya_ramka{.textik{padding-right: 8px}}}}
+@media (max-width: 1244px){#numbers{.block_in_spisok_3{div:nth-of-type(1){top:40%}}}}
+@media (max-width: 1138px){
+    #numbers{
+      .block_spiska{
+        grid-template-rows: repeat(3, 1fr); margin-bottom: 0;
+        div:nth-of-type(1){display: none} div:nth-of-type(2){grid-column: 1/3; grid-row: 2/3} div:nth-of-type(3){grid-column: 3/6; grid-row: 2/3; border-right: 1px solid lightgray; font-size: 11pt} div:nth-of-type(4){grid-column: 1/4; grid-row: 3/4}
+        div:nth-of-type(5){grid-column: 4/6; grid-row: 3/4; height: 49.8%; font-size: 14pt}
+}}}
+@media (max-width: 1147px){#karuselkaid{.bolshaya_ramka{.textik{padding-right: 5px; div:nth-of-type(2){font-size: 8pt} div:last-of-type{padding-top: 0}}}}}
+@media (max-width: 1060px){#informasia_ob_otele{.olenenok{width: 30%} div:nth-of-type(2){width: 35%; margin-left: 30%}}}
+@media (max-width: 1047px){#rasdel_video_ob_otele{.vidio_ob_otele{width: 67%; margin-left: 15%}}}
+@media (max-width: 1014px){#karuselkaid{margin-left: 2%; margin-right: 2%}}
+@media (max-width: 952px){
+  #numbers{
+    height: 300px;
+    .block_spiska{
+      grid-template-rows: repeat(4, 1fr); height: 280px;
+      div:nth-of-type(2){grid-column: 1/6; grid-row: 3/4; padding-top: 20px; border-right: 1px solid lightgray; text-align: center} div:nth-of-type(3){display: none}
+      div:nth-of-type(4){grid-column: 1/4; grid-row: 4/5; a{font-size: 10pt} a:first-of-type{padding-top: 5px} a:nth-of-type(2){top:12px; font-size: 14pt;} a:last-of-type{margin-top: -7px}}
+      div:nth-of-type(5){grid-column: 4/6; grid-row: 4/5; height: 51.8%; padding-top:15px; font-size: 10pt}
+}}}
+@media (max-device-width: 921px){#karuselkaid{.bolshaya_ramka{img{width: 40%;} .textik{div:nth-of-type(2){font-size: 11pt}}}}}
+@media (max-width: 911px){#informasia_ob_otele{.olenenok{left:70%} div:nth-of-type(2){width: 45%; margin-left: 26%}}}
+@media (max-width: 910px){
+  #karuselkaid{
+    grid-template-rows: repeat(4, 1fr); grid-template-columns: repeat(5, 1fr);
+    height: 450px;
+    .mini_ramka{grid-row: 4/5; transform-origin: top}
+    .right_ramka{grid-column: 4/5} .left_ramka{grid-column: 2/3}
+    .bolshaya_ramka{
+      grid-column: 1/6; grid-row: 1/4; margin: 0;
+      .textik{padding-right: 35px; div:last-of-type{padding-top: 10px}}
+    }
+    .else_name,.lux_superior{a:first-of-type,a:last-of-type{visibility: hidden} a:nth-of-type(2){font-size: 4vw}}
+}}
+@media (max-width: 796px){#karuselkaid{.bolshaya_ramka{img{object-fit: cover}.textik{padding-right: 5px; div:last-of-type{padding-top: 0px}}}}}
+@media (max-width: 745px){#rasdel_video_ob_otele{.vidio_ob_otele{width: 90%; margin-left: 5%}}}
+@media (max-width: 723px){#informasia_ob_otele{.olenenok{display: none} img:nth-of-type(2){width: 100%} div:nth-of-type(2){width: 60%; margin-left: 17%}}}
+@media (max-width: 680px){#numbers{.block_spiska{div:nth-of-type(5){font-size: 1.8vw;}}}}
+@media (max-width: 660px){#karuselkaid{.bolshaya_ramka{.textik{padding-left: 10px;}}}}
+@media (max-width: 625px){
+  #rasdel_video_ob_otele{
+    .vidio_ob_otele{height: 400px; width: 96%; margin-left: 2%}
+    #spisok_rolikov{padding-bottom:30px;}
+}}
+@media (max-width: 599px){
+  #numbers{
+    height: 270px;
+    .block_spiska{
+      grid-template-rows: repeat(4, 1fr); height: 280px;
+      div:nth-of-type(2){grid-row: 3/4} div:nth-of-type(4){grid-row: 4/5} div:nth-of-type(5){grid-row: 4/5}
+}}}
+@media (max-width: 587px){
+  #numbers{
+    .block_spiska{
+      height: 230px;
+      div:nth-of-type(4){a:first-of-type{padding-top: 0} a:nth-of-type(2){top:0px; margin-top: -5px; font-size: 12pt} a:nth-of-type(3){padding-left: 5%;}}
+      div:nth-of-type(5){grid-column: 4/6; grid-row: 4/5; padding-top:12.5px}
+    }
+}}
+@media (max-width: 587px){
+  #karuselkaid{.bolshaya_ramka{img{width: 40%}}}
+}
+@media (max-device-width: 540px){#karuselkaid{.bolshaya_ramka{.textik{div:nth-of-type(2){font-size: 8.2pt}}}}}
+@media (max-width: 540px){#informasia_ob_otele{.usorchik{height: 100px; background-size: 40%} div:nth-of-type(2){width: 80%; margin-left: 5%}}}
+@media (max-device-width: 480px){
+  #numbers{
+    .block_spiska{
+      grid-template-rows: repeat(5, 1fr);
+      div:last-of-type{grid-row: 5/6; grid-column: 1/6; border-left:4 5px solid $green; font-size: 7pt;}
+      div:nth-of-type(2){padding-top: 5px; font-size: 9pt}
+      div:nth-of-type(4){ grid-row: 4/5; grid-column: 1/6; height: 100%}
+    }}
+}
+@media (max-device-width: 480px){#rasdel_video_ob_otele{.vidio_ob_otele{height: 300px; width: 96%; margin-left: 2%}}}
+@media (max-device-width: 390px){#informasia_ob_otele{.usorchik{height: 100px; background-size: 40%} div:nth-of-type(2){height: 550px; p{font-size: 14pt}}}}
+@media (max-device-width: 280px){#karuselkaid{.bolshaya_ramka{.textik{div:nth-of-type(2){font-size: 6pt}}}}}
+@media (max-device-width: 280px){#informasia_ob_otele{div:nth-of-type(2){width: 235px; height: 600px; margin-left: 0}}}
+@media (max-device-width: 280px){
+  #rasdel_video_ob_otele{
+    .vidio_ob_otele{height: 250px; width: 96%; margin-left: 2%}
+    #spisok_rolikov{grid-template-columns: repeat(10, 100px); padding-bottom:30px}
+  }}
+
+.sps_but{
+  display: none;
+  font-size: 90pt;
+  position: absolute; top:150px;
+  z-index: 2; cursor: pointer;
+}
+
+.nomer_fond{
+  width: 200px; height: 30px;
+  background-image: url('../Img/Узоры/NF_0.png');
+  background-size: 100%; background-repeat: no-repeat;
+  position: absolute; top:135px;
+}
+
+.grid{
+   display: grid;
+   grid-template-columns: repeat(12, 1fr); grid-column-gap: 10px;
+   .inner,.spisok_nomerow,.Karuselka{grid-column: 1/13}
+ }
+
+.spisok_nomerow{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 500px;
+  margin-bottom: 10px;
+  .block_spiska{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, 1fr);
+    background-size: 100%; background-repeat: no-repeat;
+    font-family: $fontMR;
+    div{background-color: $gray; cursor: default}
+    div:nth-of-type(1){grid-column: 2/3; grid-row: 2/3; margin-left:-30%; background-image:url('../Img/Узоры/NF_2.png'); background-size: 100%; background-position: bottom; background-repeat: no-repeat; background-color: transparent;
+      position: relative; top:30px; z-index:1;
+    }
+    div:nth-of-type(2){grid-column: 2/3; grid-row: 3/4; padding: 10px; padding-top: 30px; font-family: $fontBB; font-size: 16pt}
+    div:nth-of-type(3){grid-column: 3/5; grid-row: 3/4; padding:7px; padding-left: 2px; padding-top: 10px; font-size: 8pt}
+    div:nth-of-type(4){grid-column: 2/4; grid-row: 4/5; display: grid; grid-template-rows: repeat(3,1fr); height: 70%; padding-left: 10px; border-left: 5px solid $green; border-top: 2px solid lightgray; font-size: 10pt;
+      a:nth-of-type(1){padding-top: 15px;} a:nth-of-type(2){margin-top: -3.5%; font-family: $fontMM; font-size: 21pt} a:nth-of-type(3){padding-left: 30%; margin-top: -3%}
+    }
+    div:nth-of-type(5){grid-column: 4/5; grid-row: 4/5; height: 51.8%; padding: 5px; padding-top: 25%; padding-bottom: 0; background-color: $yellow; text-align: center; font-size: 10pt}
+    div:nth-of-type(5):hover{background-color: yellow; cursor: pointer}
+  }
+  .block_in_spisok_1{
+    background-image:url('../Img/Номерной фонд/standart.png');
+    background-size:118.6%;
+    animation-duration: 3s;
+    div{animation-duration: 6s}
+  }
+  .block_in_spisok_2{
+    background-image:url('../Img/Номерной фонд/standart+.png');
+    animation-duration: 4s;
+    div{animation-duration: 6.5s}
+  }
+  .block_in_spisok_3{
+    background-image:url('../Img/Номерной фонд/lux.png');
+    animation-duration: 5s;
+    div{animation-duration: 7s}
+    div:nth-of-type(1){
+      background-image:url('../Img/Узоры/NF_1.png'); left:-36%; top:50%;
+    }
+  }
+}
+.Karuselka{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(3, 1fr);
+  height: 350px;
+  margin-left: 13.4%; margin-right: 13.4%;
+  animation-duration: 8s;
+  .mini_ramka{
+    grid-row: 2/3;
+    border: 1px solid $zoloto;
+    border-radius: 5px;
+    background-color: white;
+    font-family: $fontBB;
+    position: relative;
+    vertical-align: middle;
+    transition-delay: 0.1s;
+    transition-duration: 0.7s;
+    cursor: pointer;
+    .else_name, .lux_superior{
+      display: grid;
+      grid-template-columns: 8% 80% 8%;
+      width: 100%;
+      padding-top: 30px;
+      font-size: 40pt;
+      position: absolute;
+      z-index: 1;
+      a:nth-of-type(2){padding-top: 18px; font-size: 17pt}
+    }
+    .lux_superior{a:nth-of-type(2){margin-top: -16px}}
+    img{width: 100%; height: 100%; object-fit: cover; opacity: 50%;}
+  }
+  .mini_ramka:hover{img{opacity: 100%}}
+  .left_ramka{grid-column: 1/2; transform-origin: right; div:first-of-type{a:last-of-type{visibility: hidden}}}
+  .right_ramka{grid-column: 8/9; transform-origin: left; div:first-of-type{a:nth-of-type(2){padding-left: 30%;} a:first-of-type{visibility: hidden}}}
+  .bolshaya_ramka{
+    grid-row: 1/4; grid-column: 2/8;
+    margin-top: 20px; margin-bottom: 20px;
+    border: 1px solid $green;
+    border-radius: 5px;
+    background-color: white;
+    transition-duration: 0.7s;
+    animation-duration: 0.5s;
+    z-index: 2;
+    cursor:default;
+    img{
+      width: 59%; height: 100%;
+      float: left;
+      object-fit: fill;
+    }
+    .textik{
+      display: grid;
+      grid-template-rows: repeat(7, 1fr);
+      height:307px;
+      padding-left:40px; padding-right: 35px; padding-top: 25px;
+      font-family: $fontMR;
+      z-index:5;
+      div:first-of-type{font-family: $fontBB; font-size: 17pt}
+      div:nth-of-type(2){font-size: 8.2pt; ul{padding: 5%; padding-top: 5px}}
+      div:nth-of-type(3){padding-bottom: 10px; text-align: center; a{ font-family: $fontMM; font-size: 16pt; position: relative; top:2px;}}
+      div:last-of-type{width:70%; padding-top: 10px; border: 2px solid $zoloto; background-color: $yellow; text-align:center; position:relative; left:10%}
+      div:last-of-type:hover{background-color: $yellow_activ; cursor: pointer}
+    }
+  }
+}
+#knopki_karuselki{
+  display: flex;
+  flex-direction: row; justify-content:center; gap:10px;
+  height:20px;
+  margin-bottom: 40px;
+  div{
+    height:15px; width:15px; border-radius: 100%; background-color: lightgray;
+    cursor: pointer;
+  }
+  div:hover{box-shadow: inset 0px 0px 5px 0 black}
+}
+
+#informasia_ob_otele{background-color: white}
+.otel_inform{
+  font-family: $fontMR; font-size: 10.2pt; transition-duration: 20s; cursor: default;
+  .usorchik{height: 50px; background-image: url("../Img/Узоры/NF_4.png"); background-size: 12%; background-repeat:no-repeat; background-position:bottom}
+  .usorchik:first-of-type{margin-top: 100px} .usorchik:last-of-type{margin-top: 30px; -webkit-transform: rotateX(180deg)}
+  div:nth-of-type(2){width: 21.5%; height: 494.35px; margin-left: 37.5%; padding-left: 20px; padding-right: 20px; border: 2px solid $zoloto; background-color: white; position: relative;
+    div{height: 30px; width: 50%; padding-top: 10px; margin-left: 18%; border: 2px solid $zoloto; background-color: $yellow; text-align: center; position: absolute; top:95.5%}
+    div:hover{background-color: $yellow_activ; cursor: pointer}
+    p{padding-right: 72px; font-family: $fontBB;  font-weight: 1000; font-size: 20pt}
+  }
+  img{position: absolute}
+  img:first-of-type{width: 18%; left:58%; transition-duration: 3s; z-index: 2; opacity: 0}
+  img:nth-of-type(2){width: 40%; position: absolute; top: 15%; transition-duration: 5s; z-index: -1}
+  img:last-of-type{width: 100%; height: 20%; position: absolute; top: 70%; transition-duration: 5s; z-index: -2}
+}
+
+.vidio_ob_otele{
+  display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: repeat(4, 1fr); grid-gap: 10px;
+  height: 480px; width: 50%; margin-left: 25%;
+  font-family: $fontBB; font-size: 40pt; text-align: center;
+  cursor: default;
+}
+#big_video{
+  grid-column: 1/12; grid-row: 1/4;
+  width:100%; height:100%;
+  object-fit: cover;
+}
+#spisok_rolikov{
+  display: grid;
+  grid-template-columns: repeat(10, 145px); grid-gap: 20px;
+  height: 98%;
+  padding-bottom:20px;
+  background-image: url("../Img/Узоры/NF_3.png"); background-size: 50%; background-repeat:no-repeat; background-position:bottom;
+  font-family: $fontMM;
+  font-size: 8pt;
+  overflow: hidden;
+  a{
+    width: 145px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.inner{
+  display: flex;
+  height: 100%;
+}
+.grid{
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ grid-column-gap: 20px;
+ grid-auto-rows: minmax(100px, auto);
+ margin-left: 20px;
+ margin-right: 20px;
+}
+.flexbox{
+  display: flex;
+}
+.header{
+  display: flex;
+  height: 70px;
+  width: 100%;
+  font-family: $fontBB;
+  font-weight: 1000;
+  font-size: 22px;
+  z-index: 1;
+  position: fixed;
+  .menu{
+      display: flex;
+      justify-content: right;
+      width: 100%;
+      .flexbox{
+        flex-wrap: wrap;
+        div{
+          margin-top: 25px;
+          margin-left: 77px;
+          cursor: pointer;
+        }
+      }
+      .number{
+        height: 25px;
+        margin-top: 18px;
+        margin-left: 77px;
+        margin-right: 72px;
+        padding: 6px 12px;
+        border: 1.7px solid #c7af8a;
+        border-radius: 10px;
+        cursor:default;
+      }
+  }
+}
+#deer4{
+  margin: 0;
+  visibility: hidden;
+}
+.page-1{
+  position: relative;
+  overflow: hidden;
+  .background{
+    width: 100%;
+    background-image: url("../Img/fon1.png");
+    background-size: cover;
+    .grid{
+      margin-left: 0;
+      margin-right: 0;
+      .h1, .h2{grid-column: 6/13;
+      grid-row: 1}
+      .h1{
+        margin-top: 75px;
+        font-family: $fontBB;
+        font-size: 30px;
+        font-weight: 1000;
+      }
+      .h2 object {
+        height: 250px;
+        margin-left: -60px;
+        margin-top: 110px;
+      }
+      .h3{
+        grid-column: 7/13;
+        grid-row: 1;
+        margin-left: -25px;
+        font-family: $fontBB;
+        font-size: 37px;
+        margin-top: 370px;
+      }
+      .info1{
+        grid-column:7/13;
+        grid-row: 2;
+        margin-left: 30px;
+        font-family: $fontMM;
+        color: #c7af8a;
+        z-index: 2;
+        div{
+          position: absolute;
+          top: 440px;
+          left: 50%;
+        }
+        p:nth-child(1){
+          font-size: 21px;
+        }
+        p:nth-child(2){
+          margin-top: -28px;
+          font-size: 34px;
+        }
+        p:nth-child(3){
+          margin-top: -40px;
+          margin-left: 70px;
+          font-size: 15px;
+        }
+        p:nth-child(4){
+          color: black;
+        }
+      }
+      .pattern1, .pattern2{
+        height: 10px;
+        position: absolute;
+        z-index: 2;
+        div:first-child{
+          display: block;
+          height: 2px;
+          width: 1200px;
+          background-color: #c5ac84;
+        }
+        div:last-child{
+          width: 78px;
+          height: 37px;
+          position: relative;
+        }
+      }
+      .pattern1{
+        top: 641px;
+        left: 370px;
+        div:last-child{
+          background: url("../Img/pattern3.png") no-repeat;
+          background-size: cover;
+          top:-37px;
+          left: 373px;
+        }
+      }
+      .pattern2{
+        top: 695px;
+        left: 373px;
+        div:last-child{
+          background: url("../Img/pattern4.png")no-repeat;
+          background-size: cover;
+          top:-13px;
+          left: 369px;
+        }
+      }
+      .booking{
+        grid-column:4/13;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 50px;
+        border-radius: 2px;
+        margin-top: 27px;
+        margin-left: -16px;
+        background: #d3c1a2;
+        font-family: $fontMR;
+        z-index: 2;
+        .bron{
+          margin-left: 40px;
+          font-family: $fontBB;
+          font-size: 24px;
+          font-weight: 1000;
+        }
+        .viezd, .gosti, button{
+          margin-left: 20px;
+        }
+        .zaezd, .viezd, .gosti{
+          width: 145px;
+          height: 38px;
+          border-radius: 4px;
+          background-color: white;
+          font-size: 12px;
+          text-align: center;
+          overflow: hidden;
+          div:last-child input{
+            border: none;
+            font-family: $fontMR;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          div:first-child{
+            margin-top: 3px;
+            margin-left: -20px;
+          }
+        }
+        .zaezd div:last-child input, .viezd div:last-child input{
+          text-align: right;
+          position: relative;
+          top: -1px;
+          left: 12px;
+          overflow: visible;
+          &::-webkit-calendar-picker-indicator {
+            display: block;
+            background: url("../Img/icon1.ico") no-repeat;
+            background-size: cover;
+            position: relative;
+            left: -121px;
+            top: -7px;
+            opacity: 1;
+          }
+        }
+        .gosti{
+          width: 75px;
+          text-align: right;
+          div:first-child{
+            margin:0;
+            background: url("../Img/icon2.ico") no-repeat;
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 8px;
+            left: 5px;
+          }
+          .gosti2{
+            margin-right: 7px;
+            margin-top: -18px;
+          }
+          div:last-child input{
+            width: 38px;
+            text-align: center;
+          }
+        }
+        button{
+          width: 145px;
+          height: 38px;
+          border: none;
+          border-radius: 4px;
+          background: #fbd407;
+          font-family: $fontMR;
+          font-size: 14px;
+          font-weight: 600;
+          box-shadow: 0px 3px 2px #707070;
+          cursor: pointer;
+          transition: 0.2s;
+          &:hover{
+            transform: translateY(-3px);
+            transition: 0.15s;
+          }
+        }
+        .zaezd{
+          margin-left: 25px;
+        }
+      }
+      .gif1 img, .gif2 img, .gif3 img, .gif4 img{
+        position: absolute;
+        filter: blur(5px);
+        z-index: 0;
+      }
+      .gif1 img{
+        top: 375px;
+        left: 755px;
+      }
+      .gif2 img{
+        top: 370px;
+        left: 0px;
+        filter: blur(7px);
+        z-index: 3;
+      }
+      .gif3 img{
+        top: 535px;
+        left: 390px;
+      }
+      .gif4 img{
+        top: 515px;
+        left: 620px;
+
+      }
+    }
+  }
+  video{
+    height: 100%;
+    position: absolute;
+    left:-500px;
+    z-index: -1;
+  }
+}
+
+.page-5{
+  .grid{
+    width: 100%;
+    .kalendar{
+      @include BlockNazvania(160px, 40px);
+      div:first-child{
+        @include Nazvania();
+      }
+      div:last-child{
+        @include Pattern();
+      }
+    }
+    .flexbox{
+      grid-column: 1/13;
+      grid-row: 2;
+      flex-wrap: wrap;
+      justify-content: center;
+      .sobitie{
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        margin-left: 25px;
+        margin-bottom: 25px;
+        font-family: $fontMM;
+        font-size: 28px;
+        color: #414141;
+        z-index: 1;
+        cursor: pointer;
+        &:hover{
+          transform: scale(1.09);
+          z-index: 3;
+          &~.hover-sobitie{
+            z-index: 2;
+          }
+        }
+        &.№1{
+          margin-left: 0px;
+        }
+        div{
+          margin-left: 20px;
+        }
+        img{
+          height: 145px;
+          filter: contrast(120%);
+        }
+        .num{
+          margin-top: 7px;
+          margin-bottom: -7px;
+          font-size: 70px;
+        }
+        .podpisi{
+          margin-top: 8px;
+          font-family: $fontBB;
+          font-weight: 600;
+          font-size: 18px;
+          &.num1{
+            margin-bottom: 30px;
+          }
+          &.num2{
+            margin-bottom: 8px;
+          }
+        }
+        div:last-child{
+          width: 200px;
+          height: 25px;
+          margin-left: 23px;
+          background: url("../Img/pattern6.png") no-repeat;
+          background-size: 200px auto;
+        }
+      }
+      .hover-sobitie{
+        width: 100%;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+        opacity: 70%;
+        position: relative;
+        top: -400px;
+      }
+    }
+  }
+}
+
+.page-6{
+  .grid{
+    width: 100%;
+    .way-hotel{
+      @include BlockNazvania(100px, 25px);
+      div:first-child{
+        @include Nazvania();
+      }
+      div:last-child{
+        @include Pattern();
+      }
+    }
+    .flexbox{
+      grid-column: 2/6;
+      margin-right: -20px;
+      margin-left: -5px;
+      &.avto{
+        grid-row: 2;
+      }
+      &.obsh-transport{
+        grid-row: 3;
+      }
+      div:last-child{
+        //border: 1px solid black;
+        margin-left: 35px;
+        p:first-child{
+          font-family: $fontBB;
+          font-weight: 600;
+          font-size: 20px;
+        }
+        p:last-child{
+          font-family: $fontMM;
+          font-size: 12px;
+        }
+      }
+    }
+    .map {
+      grid-column:6/13;
+      grid-row: 2/5;
+      overflow: hidden;
+      margin-right: -20px;
+      text-align: right;
+    }
+    .contact-bg{
+      grid-column:2/6;
+      grid-row: 4;
+      display: flex;
+      background: url("../Img/ramka.png") no-repeat;
+      background-size: cover;
+      .contact{
+        display: flex;
+        flex-direction: column;
+        width: 42%;
+        margin-top: 45px;
+        margin-left: 45px;
+        font-family: $fontMM;
+        font-size: 12px;
+        .con-nazvanie{
+         margin-bottom: 15px;
+         font-family: $fontBB;
+         font-weight: 600;
+         font-size: 20px;
+       }
+       .con-number, .con-email, .con-adress{
+         display: flex;
+         margin-bottom: 10px;
+         div:first-child{
+           margin-right: 10px;
+         }
+       }
+       .con-number{
+         div:first-child{
+           width: 15px;
+           height: 16px;
+           background-image: url("../Img/contacts1.png");
+           background-size: cover;
+         }
+       }
+       .con-email{
+         div:first-child{
+           width: 17px;
+           height: 11px;
+           margin-top: 2.5px;
+           background-image: url("../Img/contacts2.png");
+           background-size: cover;
+         }
+       }
+       .con-adress{
+         div:first-child{
+           width: 17.5px;
+           height: 16px;
+           margin-left: 2px;
+           margin-right: 13px;
+           background-image: url("../Img/contacts3.png");
+           background-size: cover;
+         }
+       }
+      }
+      .soc-seti{
+        margin-top: 82px;
+        font-family: $fontMM;
+        font-size: 12px;
+        .znachki{
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 10px;
+          div{
+            margin-left: 10px;
+            cursor: pointer;
+          }
+          div:first-child{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1458px){
+  .page-1 .background .grid .booking{
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1400px){
+  .page-1 .background .grid .booking{
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 1339px){
+  .page-5 .grid .flexbox .hover-sobitie{
+    height: 750px;
+    top: -755px;
+}
+}
+@media screen and (max-width: 1320px){
+  .page-1 .background .grid {
+     .h1, .h2{
+       grid-column: 7/13;
+     }
+     .h3{
+       grid-column: 8/13;
+       margin-left: -5px;
+     }
+     .info1{
+       grid-column:8/13;
+       div{
+         left: 58.5%;
+       }
+      }
+      .booking{
+        margin-left: 50px;
+      }
+   }
+}
+@media screen and (max-width: 1232px){
+  .page-6 .grid{
+    .flexbox{
+      grid-column: 1/6;
+    }
+    .contact-bg{
+      grid-column:1/6;
+      .contact{
+        width: 50%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1175px){
+  .header {
+    .menu{
+      .flexbox div{
+        margin-left: 40px;
+      }
+      .number{
+        margin-right: 40px;
+        margin-left: 40px;
+      }
+    }
+  }
+  .page-1 .background{
+    background-image: url("../Img/fon2.png");
+    .grid{
+      .h1, .h2, .h3{
+        grid-column: 1/13;
+        text-align: center;
+      }
+      .h1{
+        margin-left: -360px;
+      }
+      .h3{
+        margin-left: 90px;
+      }
+      .info1{
+        grid-column:1/13;
+        div{
+          left: 0%;
+        }
+       }
+       .booking{
+         grid-column: 1/13;
+         justify-content: center;
+         margin-left: 0;
+       }
+       .pattern1, .pattern2{
+         left: 0;
+         div:last-child{
+           left: 550px;;
+         }
+       }
+       .gif1 img, .gif2 img, .gif3 img, .gif4 img{
+         visibility: hidden;
+       }
+    }
+  }
+  #deer4{
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 1000px){
+  .page-1 .background .grid{
+    .pattern1 div:last-child, .pattern2 div:last-child{
+      left: 430px;
+    }
+  }
+
+@media screen and (max-width: 900px){
+  .page-6 .grid{
+    .flexbox{
+      grid-column: 2/12;
+      margin: 0;
+      &.avto{grid-row: 3/5;}
+      &.obsh-transport{grid-row: 5/7;}
+    }
+    .map{
+      grid-column:1/13;
+      grid-row: 7/11;
+      margin-left: -20px;
+      margin-right: -20px;
+      text-align: center;
+      img{
+        width: 600px;
+        height: 500px;
+      }
+    }
+    .contact-bg{
+      grid-column:2/12;
+      grid-row: 11/13;
+      margin-top: 30px;
+      .contact{
+        width: 50%;
+      }
+    }
+  }
+}
+}
+@media screen and (max-width: 830px){
+  .page-1 .background .grid{
+    .booking {
+     .bron{
+       margin-left: 20px;
+       font-size: 20px;
+       line-height: 18px;
+     }
+     .zaezd{
+       margin-left: 15px;
+     }
+   }
+  }
+}
+@media screen and (max-width: 825px){
+  .header {
+    .menu{
+      .flexbox div{
+        margin-left: 16px;
+      }
+      .number{
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 6px 5px;
+      }
+    }
+  }
+  .page-1 .background .grid{
+    .pattern1 div:last-child, .pattern2 div:last-child{
+      left: 390px;
+    }
+  }
+  .page-5 .grid .flexbox .hover-sobitie{
+    height: 1105px;
+    top: -1130px;
+}
+}
+@media screen and (max-width: 765px){
+  .page-1 .background .grid{
+    .booking{
+     .bron{
+       margin-left: 0px;
+     }
+    .zaezd, .viezd, .gosti, button{
+       margin-left: 10px;
+     }
+     button{
+       width: 120px;
+     }
+   }
+   .pattern1 div:last-child, .pattern2 div:last-child{
+     left: 340px;
+   }
+  }
+}
+@media screen and (max-width: 700px){
+  .page-1 .background .grid{
+    .h1{
+      margin-top: 90px;
+      margin-left: -280px;
+      font-size: 28px;
+    }
+    .h2 object{
+      height: 200px;
+      margin-top: 125px;
+    }
+    .h3{
+      margin-top: 335px;
+      margin-left: 55px;
+      font-size: 30px;
+    }
+    .info1 div{
+        top: 57%;
+     }
+     .booking{
+       height: 100px;
+     }
+     .pattern1 {
+       top: 598px;
+       div:last-child{
+         left: 300px;;
+       }
+     }
+     .pattern2{
+       top: 701.5px;
+       div:last-child{
+         left: 300px;;
+       }
+     }
+  }
+}
+@media screen and (max-width: 658px){
+  .header{
+    font-size: 20px;
+  }
+  .number{
+    margin-left: 5px;
+  }
+  #deer4 img{
+    width: 65px;
+  }
+  .page-1 .background .grid{
+    .pattern1 div:last-child, .pattern2 div:last-child{
+      left: 280px;
+    }
+  }
+  .page-5 .grid .kalendar{
+    margin-top: 110px;
+   }
+}
+@media screen and (max-width: 603.5px){
+  .header .menu{
+    .flexbox div{
+      margin-top: 7px;
+    }
+    .number{
+      margin-top: 16px;
+    }
+    .flexbox div:last-child{
+      margin-top: 0px;
+    }
+  }
+  .page-1 .background .grid{
+    .h1{
+      font-size: 26px;
+      margin-left: -145px;
+    }
+    .h2 object{
+      height: 150px;
+      margin-left: -15px;
+      margin-top: 125px;
+    }
+    .h3{
+      font-size: 28px;
+      margin-top: 280px;
+      margin-left: 0px;
+    }
+    .info1{
+      div{
+          top: 335px;
+       }
+    }
+    .pattern1 {
+      top: 540px;
+      div:last-child{
+        left: 240px;;
+      }
+    }
+    .pattern2{
+      top: 644.5px;
+      div:last-child{
+        left: 240px;;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 585px){
+  .page-5 .grid .flexbox .hover-sobitie{
+    height: 1480px;
+    top: -1505px;
+  }
+}
+@media screen and (max-width: 559.5px){
+  .page-5 .grid .flexbox .hover-sobitie{
+    height: 1900px;
+    top: -1900px;
+  }
+}
+@media screen and (max-width: 525px){
+  .page-5 .grid .flexbox .sobitie{
+    margin-left: 0;
+    transition: 0s;
+  }
+}
+@media screen and (max-width: 550px){
+  .header .menu .flexbox:nth-child(1) div{
+    margin-left: 7px;
+  }
+}
+@media screen and (max-width: 440px){
+  .page-6 .grid{
+    .flexbox{
+      grid-column: 1/13;
+      &.avto{
+        grid-row: 3/6;
+      }
+      &.obsh-transport{
+        grid-row: 6/8;
+        margin-top: -70px;
+      }
+    }
+    .map{
+      grid-row: 7/12;
+      margin-top: 50px;
+    }
+    .contact-bg{
+      grid-column:1/13;
+      grid-row: 12/14;
+      .contact{
+        margin-left: 25px;
+        margin-top: 30px;
+      }
+      .soc-seti{
+        margin-top: 67px;
+        margin-right: 7px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 424px){
+  .menu .flexbox:nth-child(1) div:nth-child(2){
+    line-height: 19px;
+  }
+  .page-1 .background .grid{
+    .pattern1 div:last-child, .pattern2 div:last-child{
+      left: 155px;
+    }
+  }
+}
+@media screen and (max-width: 410px){
+  .page-1 .background .grid{
+    .h1{
+      margin-left: -140px;
+    }
+  }
+}
+#first_section{opacity: 100%; transition-duration: 1s}
+#kalendar_sobitiy{
+  .flexbox{transition-duration: 1.5s}
+  .kalendar{transition-duration: 3s}
+}
+#kontakts{
+  .way-hotel{transition-duration: 1s}
+  .avto{animation-duration: 1s}
+  .obsh-transport{animation-duration: 1.5s}
+  .map{animation-duration: 2s}
+  .contact-bg{animation-duration: 2.5s}
+}
