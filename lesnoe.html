@@ -1,0 +1,480 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="scss js/lesnoe.css">
+    <style>
+    </style>
+    <title>Лесное</title>
+</head>
+<body>
+  <div class="header">
+    <div id="deer4"><img src="Img/deer4.png" height="70" width="75"></div>
+    <div class="menu">
+      <div class="flexbox">
+        <div>ОБ ОТЕЛЕ</div>
+        <div>НОМЕРА И ЦЕНЫ</div>
+      </div>
+      <div class="flexbox">
+        <div>МЕРОПРИЯТИЯ</div>
+        <div>КОНТАКТЫ</div>
+      </div>
+    <div class="number">+7(495)005‑61‑59</div>
+   </div>
+  </div>
+
+<div class="docSlider">
+  <section class="section1" style="opacity:100%">
+      <div class="inner page-1" id='first_section'>
+          <div class = "background">
+            <div class="grid">
+              <div class="h1">ОТЕЛЬ‑ЗАПОВЕДНИК</div>
+              <div class="h2"><object type="image/svg+xml" data="Img/Text.svg">
+                <img src="Img/Text.svg">
+              </object></div>
+              <div class="h3">ПРЕМИАЛЬНЫЙ ОТДЫХ В ПОДМОСКОВЬЕ</div>
+              <div class="info1">
+                <p>от</p>
+                <p>5 500 ₽</p>
+                <p>в сутки</p>
+                <p>4х разовое питание и all inclusive.<br> Собственное подсобное хозяйство,<br> бассейн, баня, конный двор<br> и контактный зоопарк.</p>
+                <div><img src="Img/pattern1.png" width="18px"></div>
+              </div>
+              <div class="pattern1">
+                <div></div>
+                <div></div>
+              </div>
+              <div class="booking">
+                <div class="bron">БРОНИРОВАНИЕ НОМЕРОВ</div>
+                <div class="zaezd">
+                  <div>Заезд</div>
+                  <div><input type="date"></div>
+                </div>
+                <div class="viezd">
+                  <div>Выезд</div>
+                  <div><input type="date"></div>
+                </div>
+                <div class="gosti">
+                  <div></div>
+                  <div class="gosti2">Гости</div>
+                  <div><input type="number" min="0" max="100"></div>
+                </div>
+                <div><button>Найти номер</button></div>
+              </div>
+              <div class="pattern2">
+                <div></div>
+                <div></div>
+              </div>
+              <div class="gif1"><img src="Img/туманз.gif" width="800px" height="300px"></div>
+              <div class="gif2"><img src="Img/туманп.gif" width="600px" height="370px"></div>
+              <div class="gif3"><img src="Img/туманз.gif" width="380px" height="160px"></div>
+              <div class="gif4"><img src="Img/туманз.gif" width="140px" height="165px"></div>
+            </div>
+          </div>
+          <video src="Img/лесное.mp4" autoplay loop muted></video>
+      </div>
+  </section>
+    <section>
+        <div class="inner" style='font-weight: bold; justify-content: center; align-items: center; font-size: 28px; height:120px;font-family: BebasNeue-Book; margin-top:60px; padding-bottom: 60px; margin-bottom: -50px;background-image: url("Img/pattern5.png"); background-size: 175px; background-repeat:no-repeat; background-position:center; text-align:center'> <div></div> Номерной фонд</div>
+        <div class="spisok_nomerow" id='numbers'>
+          <div class='block_in_spisok_1 block_spiska'>
+            <div></div>
+            <div>СТАНДАРТ</div>
+            <div>
+              Небольшой уютный номер 22м <small><sup>2</sup></small> квадратных метра, есть варианты с одной двухспальной кроватью или с двумя односпальными кроватями.
+            </div>
+            <div>
+              <a>от</a>
+              <a>5 500 &#8381;</a>
+              <a>в сутки</a>
+            </div>
+            <div>Посмотреть номер</div>
+          </div>
+          <div class='block_in_spisok_2 block_spiska'>
+            <div></div>
+            <div>СТАНДАРТ ПЛЮС</div>
+            <div>
+              Просторный уютный номер 28м<small><sup>2</sup></small>, есть варианты с одной двухспальной кроватью или с двумя односпальными кроватями.
+            </div>
+            <div>
+              <a>от</a>
+              <a>6 000 &#8381;</a>
+              <a>в сутки</a>
+            </div>
+            <div>Посмотреть номер</div>
+          </div>
+          <div class='block_in_spisok_3 block_spiska'>
+            <div></div>
+            <div>ЛЮКС</div>
+            <div>
+              Просторные апартаменты повышенной комфортности площадью 50м<small><sup>2</sup></small>, есть варианты с душевой кабиной либо с ванной.
+            </div>
+            <div>
+              <a>от</a>
+              <a>7 500 &#8381;</a>
+              <a>в сутки</a>
+            </div>
+            <div>Посмотреть номер</div>
+          </div>
+        </div>
+        <div class="Karuselka" id='karuselkaid' onclick="karuselka(event)">
+
+          <div class="bolshaya_ramka">
+            <div class='lux_superior' style="display:none"><a>&#8249;</a><a>ЛЮКС СУПЕРИОР</a><a>&#8250;</a></div>
+            <img src='Img/Номерной фонд/lux_suprerior.png'>
+            <div class='textik'>
+              <div>ЛЮКС СУПЕРИОР</div>
+              <div style="grid-row:2/6">
+                Роскошные двухкомнатные апартаменты повышенной комфортности площадью 55м<small><sup>2</sup></small>, с ванной и электрокамином.
+                <ul>
+                  <li>Количество комнат в номере: 2.</li>
+                  <li>Количество основных мест в номере: 4.</li>
+                  <li>Количество дополнительных мест: 1.</li>
+                  <li>Площадь номера: 55м<small><sup>2</sup></small>.</li>
+                  <li>Всего номеров: 4.</li>
+                </ul>
+              </div>
+              <div>от <a>9 550 &#8381;</a> в сутки</div>
+              <div>Посмотреть номер</div>
+            </div>
+          </div>
+
+          <div class="mini_ramka right_ramka">
+            <div class="else_name"><a>&#8249;</a><a>КОТТЕДЖ</a><a>&#8250;</a></div>
+            <img src='Img/Номерной фонд/kotedsh.png'>
+            <div class='textik' style="display: none">
+              <div>КОТТЕДЖ</div>
+              <div style="grid-row:2/6">
+                Уютный 2-х уровневый коттедж для компании отдыхающих [12-16 человек]. Большой холл, роскошная гостиная для дружеских посиделок, полностью оборудованная кухня, своя зона барбекю.
+                <ul>
+                  <li>Количество комнат: 7.</li>
+                  <li>Количество туалетных комнат: 4.</li>
+                  <li>Количество душевых кабин 4 + ванная.</li>
+                  <li>Общая площадь коттеджа: 288м<small><sup>2</sup></small>.</li>
+                </ul>
+              </div>
+              <div>от <a>28 000 &#8381;</a> в сутки</div>
+              <div>Обзор коттеджа</div>
+            </div>
+          </div>
+
+          <div class="mini_ramka left_ramka">
+            <div class="else_name"><a>&#8249;</a><a>VIP ВИЛЛА</a><a>&#8250;</a></div>
+            <img src='Img/Номерной фонд/vipvilla.png'>
+            <div class='textik' style="display: none">
+              <div>VIP ВИЛЛА</div>
+              <div style="grid-row:2/6">
+                К услугам наших гостей – пятиуровневая вилла.
+                Общая площадь составляет около 1000м<small><sup>2</sup></small>. Здесь расположено 6 спален, большая кухня,
+                оснащенная мебелью ручной работы и современной бытовой техникой. Наши Гости смогут
+                насладиться изысканным интерьером холлов, открытой панорамной веранды с видом на озера и луга.
+                Есть отдельная парковка и зона барбекю.
+              </div>
+              <div>Цена в макете не указана</div>
+              <div>Обзор виллы</div>
+            </div>
+          </div>
+
+        </div>
+        <div id='knopki_karuselki'>
+          <div onclick='dots(0, karuselkaid)' style="background-color: #759654"></div>
+          <div onclick='dots(1, karuselkaid)'></div>
+          <div onclick='dots(2, karuselkaid)'></div>
+        </div>
+    </section>
+    <section id='informasia_ob_otele' class='otel_inform'>
+      <div class='usorchik'></div>
+      <img src="Img/об отеле/olenenok.png" class='olenenok' style="left: 68%">
+      <div>
+        <p>ДОБРО ПОЖАЛОВАТЬ В ОТЕЛЬ-ЗАПОВЕДНИК "ЛЕСНОЕ"</p>
+        <a>
+          Отель-заповедник «Лесное» - прекрасное место для настоящих ценителей кристально свежего воздуха и живописных красот настоящей Русской природы. В нашем отеле вас ждут светлые и уютные с замечательным видом на живой хвойный лес, высокий уровень обслуживания и развлечения на любой вкус. <br>
+          Общая территория отеля «Лесное» - 682 гектара, куда входят: луга, лесной массив и 11 природных озер, 89 просторных и светлых номеров категории стандарт, люкс, коттедж и VIP вилла.<br><br>
+          Ресторан на 250 персон, в котором вы сможете по достоинству оценить русскую, итальянскую, кавказскую, французскую и европейскую кухни. Наши повара используют только самые свежие продукты, которые поставляются из собственного подсобного хозяйства.
+        </a>
+        <div>Обзор территории</div>
+      </div>
+      <div class='usorchik'></div>
+      <img src="Img/об отеле/otel.png" style="top: 50%">
+      <img src="Img/об отеле/fon.jpeg">
+    </section>
+    <section id="rasdel_video_ob_otele">
+      <div class="inner" style='font-weight: bold; justify-content: center; align-items: center; font-size: 28px; height:120px;font-family: BebasNeue-Book; margin-top:60px; padding-bottom: 60px; margin-bottom: -50px;background-image: url("Img/pattern5.png"); background-size: 175px; background-repeat:no-repeat; background-position:center; text-align:center'> <div></div>ВИДЕО ОБ ОТЕЛЕ</div>
+      <div class="vidio_ob_otele">
+        <video id="big_video" src='Img/лесное.mp4' autoplay loop muted controls></video>
+        <div style='height: 100%; width:100%; margin-top: 40px; background-size: 100%; background-repeat: no-repeat; background-image:url("Img/Узоры/NF_2.png");-webkit-transform: rotateY(180deg)'></div>
+        <div style='margin-top: 30%; margin-bottom: 60%; cursor: pointer' onclick="spisok_rolikov.scrollBy(-148,0)">&#8249;</div>
+        <div id='spisok_rolikov' style='grid-column:3/10'>
+          <a href="#"><img src="img/48903_32.jpg" width='100%' height='75%'>Новый год 2019</a>
+          <a href="#"><img src="img/48903_32.jpg" width='100%' height='75%'>Лето в "Лесном"</a>
+          <a href="#"><img src="img/48903_32.jpg" width='100%' height='75%'>Осень пара свадьб</a>
+          <a href="#"><img src="img/48903_32.jpg" width='100%' height='75%'>Новый год 2019</a>
+          <a href="#"><img src="img/48903_32.jpg" width='100%' height='75%'>Новый год 2019</a>
+        </div>
+        <div style='margin-top: 30%; margin-bottom: 60%; cursor: pointer' onclick="spisok_rolikov.scrollBy(148,0)">&#8250;</div>
+        <div style='height: 100%; width:100%; margin-top: 40px; background-size: 100%; background-repeat: no-repeat; background-image:url("Img/Узоры/NF_2.png")'></div>
+      </div>
+    </section>
+    <section>
+        <div class="inner page-5">
+          <div class="grid" id='kalendar_sobitiy'>
+            <div class="kalendar" style="opacity: 0; margin-top:10px">
+              <div>КАЛЕНДАРЬ СОБЫТИЙ</div>
+              <div></div>
+            </div>
+            <div class="flexbox" style="opacity: 0">
+              <div class="sobitie №1">
+                <img src="Img/sobitia1.png">
+                <div class="num">7‑10</div>
+                <div>марта</div>
+                <div class="podpisi num1">«МЕЖДУНАРОДНЫЙ ЖЕНСКИЙ ДЕНЬ»</div>
+                <div></div>
+              </div>
+              <div class="sobitie">
+                <img src="Img/sobitia2.png">
+                <div class="num">22‑31</div>
+                <div>марта</div>
+                <div class="podpisi num1">«ДЕТСКИЕ КАНИКУЛЫ»</div>
+                <div></div>
+              </div>
+              <div class="sobitie">
+                <img src="Img/sobitia3.png">
+                <div class="num">15‑21</div>
+                <div>апреля</div>
+                <div class="podpisi num2">«BBQ PARTY» - ДЕЛАЕМ САМЫЙ БОЛЬШОЙ СТЕЙК</div>
+                <div></div>
+              </div>
+              <div class="sobitie">
+                <img src="Img/sobitia4.png">
+                <div class="num">9</div>
+                <div>мая</div>
+                <div class="podpisi num1">«ДЕНЬ ПОБЕДЫ»</div>
+                <div></div>
+              </div>
+              <div class="sobitie">
+                <img src="Img/sobitia5.png">
+                <div class="num">5‑10</div>
+                <div>июня</div>
+                <div class="podpisi num2">ДЕНЬ ЛЕТА, ЗАПУСКАЕМ ВОЗДУШНЫХ ЗМЕЕВ</div>
+                <div></div>
+              </div>
+              <div class="hover-sobitie"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section>
+        <div class="inner page-6">
+          <div class="grid" id='kontakts'>
+            <div class="way-hotel" style="opacity: 0; margin-top:10px">
+              <div>КАК ДОБРАТЬСЯ ДО ОТЕЛЯ</div>
+              <div></div>
+            </div>
+            <div class="flexbox avto">
+              <div><img src="Img/znak1.png" width="145px" height="160px"></div>
+              <div>
+                <p>НА АВТОМОБИЛЕ:</p>
+                <p>Двигайтесь 110 км по Киевскому шоссе от МКАД в сторону
+                   Калуги, далее съезд направо перед участком платной дороги
+                   в сторону село Недельное 26 км.</p>
+              </div>
+            </div>
+            <div class="flexbox obsh-transport">
+              <div><img src="Img/znak2.png" width="145px" height="160px"></div>
+              <div>
+                <p>ОБЩЕСТВЕННЫМ ТРАНСПОРТОМ:</p>
+                <p>От Киевского вокзал на комфортабельном экспрессе до станции
+                   Малоярославец, далее от жд станции на такси до отеля.</p>
+              </div>
+            </div>
+            <div class="map"><img src="Img/map.png" width="750px" height="650px"></div>
+            <div class="contact-bg">
+              <div class="contact">
+                <div class="con-nazvanie">КОНТАКТЫ</div>
+                <div class="con-number">
+                  <div></div>
+                  <div>+7 495 005 61 59</div>
+                </div>
+                <div class="con-email">
+                  <div></div>
+                  <div>info@lesnoe.ru</div>
+                </div>
+                <div class="con-adress">
+                  <div></div>
+                  <div>249073, Калужская обл., село Недельное</div>
+                </div>
+              </div>
+              <div class="soc-seti">
+                <div>Социальные сети</div>
+                <div class="znachki">
+                  <div><img src="Img/contacts4.png" width="23px" height="23px"></div>
+                  <div><img src="Img/contacts5.png" width="23px" height="23px"></div>
+                  <div><img src="Img/contacts6.png" width="23px" height="23px"></div>
+                  <div><img src="Img/contacts7.png" width="23px" height="23px"></div>
+                  <div><img src="Img/contacts8.png" width="23px" height="23px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
+
+<script src="scss js/lesnoe.js"></script>
+<script>
+  docSlider.init();
+  function sleep(millis) {
+    var t = (new Date()).getTime();
+    var i = 0;
+    while (((new Date()).getTime() - t) < millis) {
+        i++;
+    }
+  }
+
+  dot=0
+
+  function karuselka(event){
+    eventy=event.target
+    if (eventy.className!='mini_ramka left_ramka' && eventy.className!='mini_ramka right_ramka'){eventy=event.target.parentElement}
+    if (eventy.className!='mini_ramka left_ramka' && eventy.className!='mini_ramka right_ramka'){eventy=eventy.parentElement}
+
+    karuselkaid.getElementsByClassName('bolshaya_ramka')[0].addEventListener('transitionend', () => {
+      if (a==1) {
+        a=0;
+        switch (eventy.className) {
+          case 'mini_ramka left_ramka':
+            karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].className='mini_ramka left_ramka'
+            karuselkaid.getElementsByClassName('bolshaya_ramka')[0].children[2].style.display='none'
+            karuselkaid.getElementsByClassName('bolshaya_ramka')[0].children[0].removeAttribute("style")
+            karuselkaid.getElementsByClassName('bolshaya_ramka')[0].className='mini_ramka right_ramka'
+            eventy.children[0].style.display='none'
+            eventy.children[2].removeAttribute("style")
+            eventy.className='bolshaya_ramka'
+            if (dot==0){dot=3}
+            dot=dot-1
+            dots(dot, eventy.parentElement)
+            ani()
+            break;
+          case 'mini_ramka right_ramka':
+            karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].className='mini_ramka right_ramka'
+            karuselkaid.getElementsByClassName('bolshaya_ramka')[0].children[0].removeAttribute("style")
+            karuselkaid.getElementsByClassName('bolshaya_ramka')[0].children[2].style.display='none'
+            karuselkaid.getElementsByClassName('bolshaya_ramka')[0].className='mini_ramka left_ramka'
+            eventy.children[0].style.display='none'
+            eventy.children[2].removeAttribute("style")
+            eventy.className='bolshaya_ramka'
+            dot=dot+1
+            if (dot==3) dot=0
+            dots(dot, eventy.parentElement)
+            ani()
+            break;
+          }
+        }
+    })
+
+    switch (eventy.className) {
+      case 'mini_ramka left_ramka':
+        if (window.innerWidth<=910){
+          karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleY(0.000001)'
+          karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleY(0.000001)'
+        }
+        else{
+          karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleX(0.000001)'
+          karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleX(0.000001)'
+        }
+        karuselkaid.getElementsByClassName('bolshaya_ramka')[0].style.transform='scale(0.9)'
+        for(i=0; i<3; i++) karuselkaid.children[i].style.opacity='0'
+        a=1
+        break;
+      case 'mini_ramka right_ramka':
+        if (window.innerWidth<=910){
+          karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleY(0.000001)'
+          karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleY(0.000001)'
+        }
+        else{
+          karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleX(0.000001)'
+          karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleX(0.000001)'
+        }
+        karuselkaid.getElementsByClassName('bolshaya_ramka')[0].style.transform='scale(0.9)'
+        for(i=0; i<3; i++) karuselkaid.children[i].style.opacity='0'
+        a=1
+      break;
+    }
+  }
+
+  function ani(){
+    if (window.innerWidth<=910){
+      karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleY(0.000001)'
+      karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleY(0.000001)'
+    }
+    else{
+      karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleX(0.000001)'
+      karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleX(0.000001)'
+    }
+    karuselkaid.getElementsByClassName('bolshaya_ramka')[0].style.transform='scale(0.9)'
+    karuselkaid.getElementsByClassName('bolshaya_ramka')[0].style.animationName='i_hid'
+    karuselkaid.getElementsByClassName('bolshaya_ramka')[0].addEventListener('animationend', () =>{
+      if (window.innerWidth<=910){
+        karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleY(1)'
+        karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleY(1)'
+      }
+      else{
+        karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleX(1)'
+        karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleX(1)'
+      }
+      karuselkaid.getElementsByClassName('bolshaya_ramka')[0].style.transform='scale(1)'
+      for(i=0; i<3; i++) karuselkaid.children[i].style.opacity='100%'
+      karuselkaid.getElementsByClassName('bolshaya_ramka')[0].removeAttribute("style")
+    })
+  }
+
+  function dots(number, eventy){
+    switch (number) {
+      case 0:
+        rig=1
+        lef=2
+        break
+      case 1:
+        rig=2
+        lef=0
+        break;
+      case 2:
+        rig=0
+        lef=1
+        break;
+    }
+    cent=number
+    if (eventy.parentElement.className!='Karuselka') rastan(lef, cent, rig)
+    colorist(number)
+  }
+
+  function rastan(lef, cent, rig){
+    for(i=0; i<3; i++) karuselkaid.children[i].style.opacity='0'
+    karuselkaid.getElementsByClassName('mini_ramka left_ramka')[0].style.transform='scaleX(0.000001)'
+    karuselkaid.getElementsByClassName('mini_ramka right_ramka')[0].style.transform='scaleX(0.000001)'
+    karuselkaid.getElementsByClassName('bolshaya_ramka')[0].style.transform='scale(0.9)'
+
+
+    karuselkaid.children[lef].children[0].removeAttribute("style")
+    karuselkaid.children[lef].children[2].style.display='none'
+    karuselkaid.children[lef].className='mini_ramka left_ramka'
+    karuselkaid.children[cent].children[0].style.display='none'
+    karuselkaid.children[cent].children[2].removeAttribute("style")
+    karuselkaid.children[cent].className='bolshaya_ramka'
+    karuselkaid.children[rig].children[0].removeAttribute("style")
+    karuselkaid.children[rig].children[2].style.display='none'
+    karuselkaid.children[rig].className='mini_ramka right_ramka'
+    ani()
+  }
+
+  function colorist(number){
+    for (i=0; i<3; i++){knopki_karuselki.children[i].removeAttribute("style")}
+    knopki_karuselki.children[number].style.backgroundColor='#759654'
+  }
+
+</script>
+</body>
+</html>
